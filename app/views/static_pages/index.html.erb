@@ -1,4 +1,8 @@
-<%= form_tag url: static_pages_path, method: :get %>
+<%= form_with url: static_pages_path, method: :get %>
   <%= label_tag :flickr_id, "User's Flickr id: " %>
   <%= text_field_tag :flickr_id %>
   <%= submit_tag "Search" %>
+
+<% if @list %>
+<div><%= @list %> </div>
+<% end %>
