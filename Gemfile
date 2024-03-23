@@ -67,4 +67,4 @@ group :test do
 end
 
 gem 'figaro'
-gem 'flickr'
+gem 'flickr', '~> 2.1'

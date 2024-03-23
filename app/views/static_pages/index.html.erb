@@ -1,8 +1,11 @@
-<%= form_with url: static_pages_path, method: :get %>
+<p>
+  <%= form_with url: static_pages_path, method: :get %>
   <%= label_tag :flickr_id, "User's Flickr id: " %>
-  <%= text_field_tag :flickr_id %>
+  <%= text_field_tag :flickr_id, nil, placeholder: "Example: 12345678@N06" %>
   <%= submit_tag "Search" %>
-
-<% if @list %>
-<div><%= @list %> </div>
+</p>
+<% if @photos_urls %>
+  <% @photos_urls.each do |photo_url| %>
+    <div><img src="<%= photo_url %>"></div>
+  <% end %>
 <% end %>
